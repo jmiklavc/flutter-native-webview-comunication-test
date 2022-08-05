@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			#container1 {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#container2 {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
+
+			h1 {
+				font-size: 70px;
+			}
+
+			button {
+				background-color: #2a95e1;
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 34px;
+				margin: 4px 2px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
 	<body>
-		<div style="display: flex; flex-direction:column; justify-items:center; align-items:center">
-			<div>
-				<h2>Test item</h2>
+		<div id="container1">
+			<div id="container2">
+				<h1>Test item</h1>
 				<button id="button">Add to cart</button>
 			</div>
 		</div>
 
-        <script>
-            let button = document.getElementById("button")
-            button.addEventListener("click", ()=> alert("click"))
-        </script>
+		<script>
+			let button = document.getElementById('button');
+			button.addEventListener('click', () => alert('click'));
+		</script>
 	</body>
 </html>
