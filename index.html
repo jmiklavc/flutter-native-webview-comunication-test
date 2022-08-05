@@ -48,9 +48,12 @@
 			</div>
 		</div>
 
-		<script>
+		<script type='text/javascript'>
 			let button = document.getElementById('button');
-			button.addEventListener('click', () => alert('click'));
+			button.addEventListener('click', () => {
+                Add.postMessage('Add to cart');
+                
+            });
 		</script>
 	</body>
 </html>
