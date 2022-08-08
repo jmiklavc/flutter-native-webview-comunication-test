@@ -48,13 +48,21 @@
 			</div>
 		</div>
 
-		<script type='text/javascript'>
+		<script type="text/javascript">
+			let isFlutterInAppWebViewReady = false;
+			window.addEventListener('flutterInAppWebViewPlatformReady', function (event) {
+				isFlutterInAppWebViewReady = true;
+			});
+			// then, somewhere in your code
+			
+
 			let button = document.getElementById('button');
 			button.addEventListener('click', () => {
-                const message = "Added to cart"
-                window.flutter_inappwebview.callHandler("AddToCart", message)
-                
-            });
+                if (isFlutterInAppWebViewReady) {
+				const args = [1, true, ['bar', 5], { foo: 'baz' }];
+				window.flutter_inappwebview.callHandler('AddToCart', ...args);
+			}
+			});
 		</script>
 	</body>
 </html>
