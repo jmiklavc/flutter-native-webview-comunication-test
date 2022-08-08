@@ -52,7 +52,7 @@
 			let button = document.getElementById('button');
 			button.addEventListener('click', () => {
                 const message = "Added to cart"
-                window.flutter_inappwebview.callHandler(handlerName, message)
+                window.flutter_inappwebview.callHandler("AddToCart", message)
                 
             });
 		</script>
