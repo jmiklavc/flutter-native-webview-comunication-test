@@ -45,9 +45,7 @@
 
 			window.addEventListener('flutterInAppWebViewPlatformReady', function (event) {
 				window.flutter_inappwebview.callHandler('getCartItems').then( res => {
-                    console.log("res:",res)
-                    console.log(JSON.stringify(res))
-                    itemCount.textContent = JSON.stringify(res)
+                    itemCount.textContent = res.numberOfItems
 
                 }
                 );
