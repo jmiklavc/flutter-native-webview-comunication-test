@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			#container1 {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#container2 {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
+
+			h1 {
+				font-size: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container1">
+			<div id="container2">
+				<h1>
+					You have
+					<span id="itemCount">0</span>
+					items in your cart.
+				</h1>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+
+            let itemCount = document.getElementById('itemCount')
+
+			window.addEventListener('flutterInAppWebViewPlatformReady', function (event) {
+				window.flutter_inappwebview.callHandler('getCartItems').then( res => {
+                    itemCount.textContent = JSON.stringify(res)
+
+                }
+                );
+			});
+
+			
+		</script>
+	</body>
+</html>
