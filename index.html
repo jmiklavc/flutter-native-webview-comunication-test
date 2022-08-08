@@ -59,8 +59,8 @@
 			let button = document.getElementById('button');
 			button.addEventListener('click', () => {
                 if (isFlutterInAppWebViewReady) {
-				const args = [1, true, ['bar', 5], { foo: 'baz' }];
-				window.flutter_inappwebview.callHandler('AddToCart', ...args);
+				
+				window.flutter_inappwebview.callHandler('AddToCart', 'Added to cart');
 			}
 			});
 		</script>
